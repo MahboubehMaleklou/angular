@@ -1,0 +1,55 @@
+<div class="shadow-sm flex w-full">
+  <div class="relative h-12 w-full bg-white px-5 py-2 dark:bg-secondary">
+    <div class="flex gap-1">
+      <div class="dropdown relative">
+        <div hlMenu class="!block">
+          <button type="button" hlMenuButton class="group block">
+            <div
+              class="h-9 w-9 inline-flex rounded-full items-center justify-center bg-slate-100 dark:bg-slate-500 dark:text-white"
+            >
+              <!-- <i class="fa-solid fa-user"></i> -->
+              <img class="icon-image" src="assets/images/profile.png">
+            </div>
+          </button>
+          <ul
+            *hlMenuItems
+            @toggleAnimation
+            class="dropdown-menu"
+          >
+            <li
+            class="menu-item"
+            >
+              <a routerLink="/users/profile" *hlMenuItem="let menuItem">
+                <span class="pr-2">پروفایل</span>
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+            <li
+            class="menu-item"
+            >
+              <a routerLink="/Logout" *hlMenuItem="let menuItem">
+                <span class="pr-2">خروج</span>
+                <i class="fa-solid fa-sign-out"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <span class="icon-container">
+        <i class="fa-solid fa-bell"></i>
+      </span>
+      <span class="icon-container">
+        <i class="fa-solid fa-envelope"></i>
+      </span>
+      <div class="icon-container" (click)="toggleTheme()">
+        <button>
+          <i class="fa-solid fa-sun hidden dark:inline"></i>
+          <i class="fa-solid fa-moon dark:hidden"></i>
+        </button>
+      </div>
+      <div  *ngIf="!layoutService.showSidebar()" (click)="layoutService.setSidebarState(true)" class="sidebar-toggle">
+          <i class="fa-solid fa-angle-double-left"></i>
+      </div>
+    </div>
+  </div>
+</div>

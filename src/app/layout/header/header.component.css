@@ -1,0 +1,20 @@
+.icon-container {
+    @apply h-8 w-8 inline-flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-500 dark:text-white;
+  }
+
+  .icon-image {
+    @apply h-9 w-9 inline-flex rounded-full items-center justify-center;
+  }
+
+  .dropdown-menu {
+    @apply absolute top-10 w-[230px] rounded-md text-right !py-0 font-semibold bg-slate-100 dark:text-gray-400 dark:bg-accent border border-gray-300 dark:border-gray-600 backdrop-blur-lg;
+  }
+
+  .menu-item{
+    @apply p-2 rounded-md hover:bg-slate-400 dark:hover:text-white dark:hover:bg-[#324871]
+  }
+  
+  .sidebar-toggle {
+    @apply absolute right-0 h-8 w-8 flex items-center dark:text-white;
+  }
+  
