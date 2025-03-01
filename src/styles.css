@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'PeydaWeb';
+  font-family: 'IranSans';
   src: url('/assets/fonts/IRANSansXFaNum-Regular.woff2') format('woff2'),
        url('/assets/fonts/IRANSansXFaNum-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+
+body {
+  font-family: 'IranSans', sans-serif;
 }

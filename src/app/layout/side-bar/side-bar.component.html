@@ -1,0 +1,52 @@
+<div
+  class="z-50 h-full min-h-screen dark:bg-[#0e1726] bg-white dark:text-white"
+>
+  <div class="flex flex-row shadow-md h-12">
+    <a
+      class="flex items-center relative left-2"
+      routerLink="/"
+      (click)="layoutService.setSidebarState(false)"
+    >
+      <i class="fa-solid fa-angle-double-right"></i>
+    </a>
+    <p
+      class="w-full items-center font-semibold justify-center text-lg hidden sm:flex"
+    >
+      Template
+    </p>
+  </div>
+
+  <nav class="p-3">
+    <ul>
+      @for (item of menuItems; track item.title) {
+      <li class="mb-2">
+        <div
+          class="flex items-center p-2 hover:bg-slate-400 dark:hover:text-white dark:hover:bg-[#324871] rounded cursor-pointer"
+          (click)="toggleSubMenu(item)"
+        >
+          @if (item.subItems && item.subItems.length > 0) {
+            <i [ngClass]="item.isOpen ? 'fa fa-angle-down' : 'fa fa-angle-left'"></i>
+          }
+          <div class="flex items-center flex-row-reverse flex-grow">
+            <i [class]="item.icon"></i>
+            <span class="mr-2">{{ item.title }}</span>
+          </div>
+        </div>
+        @if (item.isOpen && item.subItems && item.subItems.length > 0) {
+        <ul class="mt-1">
+          @for (subItem of item.subItems; track subItem.title) {
+          <li class="mb-1 pr-8">
+            <div
+              class="p-2 hover:bg-slate-400 dark:hover:text-white dark:hover:bg-[#324871] rounded cursor-pointer text-right"
+            >
+              {{ subItem.title }}
+            </div>
+          </li>
+          }
+        </ul>
+        }
+      </li>
+      }
+    </ul>
+  </nav>
+</div>

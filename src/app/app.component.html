@@ -1,5 +1,8 @@
 <div class="bg-light flex dark:bg-primary min-h-screen">
-  
+  <side-bar
+    class="lg:w-1/4 w-[320px] z-10 fixed right-0 sidebar-transition"
+    [ngClass]="layoutService.showSidebar() ? 'translate-x-0' : 'translate-x-full'"
+  ></side-bar>
   <div
     class="content flex flex-col flex-1 content-transition"
     [ngClass]="layoutService.showSidebar() ? 'lg:mr-[25%] w-full' : 'w-full mr-0'"
